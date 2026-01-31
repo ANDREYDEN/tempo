@@ -1,11 +1,23 @@
 import { Stack } from "expo-router";
+import { ThemeProvider } from "../providers/ThemeProvider";
+import { useContentStyle } from "../styling/useContentStyle";
 
-export default function RootLayout() {
+export default function Root() {
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="intro" options={{ headerShown: false }} />
+    <ThemeProvider>
+      <RootLayout />
+    </ThemeProvider>
+  );
+}
+
+function RootLayout() {
+  const contentStyle = useContentStyle();
+
+  return (
+    <Stack screenOptions={{ contentStyle, headerShown: false }}>
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="index" />
+      <Stack.Screen name="intro" />
     </Stack>
   );
 }

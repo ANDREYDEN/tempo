@@ -1,13 +1,15 @@
 import { Link } from "expo-router";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { TButton } from "../components/TButton";
+import { TText } from "../components/TText";
 
 export function IntroScreen() {
   return (
     <View style={styles.container}>
-      <Text>Welcome to Tempo!</Text>
+      <TText>Welcome to Tempo!</TText>
 
       <Link href="/(tabs)/exercises" asChild>
-        <Button title="Continue" />
+        <TButton title="Continue" />
       </Link>
     </View>
   );

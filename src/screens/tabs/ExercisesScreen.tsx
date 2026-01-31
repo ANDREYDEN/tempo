@@ -1,9 +1,10 @@
-import { Text, View } from "react-native";
+import { TText } from "@/src/components/TText";
+import { View } from "react-native";
 
 export function ExercisesScreen() {
   return (
     <View>
-      <Text>Start by creating a new exercise</Text>
+      <TText>Start by creating a new exercise</TText>
     </View>
   );
 }
