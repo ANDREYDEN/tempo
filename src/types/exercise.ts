@@ -4,5 +4,7 @@ export interface Exercise {
   id: string;
   name: string;
   description: string;
-  sets: ExerciseSet[];
+  numberOfSets: number;
+  restBetweenSetsSeconds: number;
+  set: ExerciseSet;
 }

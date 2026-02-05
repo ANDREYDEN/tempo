@@ -2,7 +2,7 @@ export interface ExerciseSet {
   id: string;
   name: string;
   description: string;
-  numberOfReps?: number;
+  numberOfReps: number;
   repDurationSeconds?: number;
   restBetweenRepsSeconds?: number;
 }
