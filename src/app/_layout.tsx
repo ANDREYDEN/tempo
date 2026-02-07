@@ -22,6 +22,14 @@ function RootLayout() {
       <Stack.Screen name="index" />
       <Stack.Screen name="intro" />
       <Stack.Screen
+        name="new-exercise"
+        options={{
+          headerShown: true,
+          headerBackButtonDisplayMode: "minimal",
+          title: "New Exercise",
+        }}
+      />
+      <Stack.Screen
         name="exercise/[id]"
         options={{ headerShown: true, headerBackButtonDisplayMode: "minimal" }}
       />

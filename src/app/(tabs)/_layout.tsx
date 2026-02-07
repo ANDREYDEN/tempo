@@ -1,3 +1,4 @@
+import { NewExerciseButton } from "@/src/components/(tabs)/exercises/AddExerciseButton";
 import { Spacing } from "@/src/styling/spacing";
 import { useContentStyle } from "@/src/styling/useContentStyle";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
@@ -17,6 +18,7 @@ export default function TabsLayout() {
           tabBarIcon: () => (
             <MaterialIcons name="play-arrow" size={Spacing.lg_24} />
           ),
+          headerRight: NewExerciseButton,
         }}
       />
       <Tabs.Screen
