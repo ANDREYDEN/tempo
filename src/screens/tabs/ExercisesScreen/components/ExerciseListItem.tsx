@@ -3,6 +3,7 @@ import { useTheme } from "@/src/providers/ThemeProvider";
 import { Spacing } from "@/src/styling/spacing";
 import { Exercise } from "@/src/types/exercise";
 import { getExerciseDurationMinutes } from "@/src/utils/exerciseUtils";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { StyleSheet, View } from "react-native";
 
 interface ExerciseListItemProps {
@@ -16,7 +17,10 @@ export function ExerciseListItem({ exercise }: ExerciseListItemProps) {
   return (
     <View style={styles.container}>
       <TText>{exercise.name}</TText>
-      <TText>{exerciseDurationSeconds}m</TText>
+      <View style={styles.durationContainer}>
+        <TText>{exerciseDurationSeconds}m</TText>
+        <MaterialIcons name="access-time" size={Spacing.md_16} />
+      </View>
     </View>
   );
 }
@@ -32,6 +36,12 @@ function useStyles() {
       flexDirection: "row",
       justifyContent: "space-between",
       alignItems: "center",
+    },
+    durationContainer: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      gap: Spacing.xs_4,
     },
   });
 }
