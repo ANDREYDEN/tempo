@@ -1,11 +1,14 @@
 import { Stack } from "expo-router";
+import { ExercisesProvider } from "../providers/ExercisesProvider";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import { useContentStyle } from "../styling/useContentStyle";
 
 export default function Root() {
   return (
     <ThemeProvider>
-      <RootLayout />
+      <ExercisesProvider>
+        <RootLayout />
+      </ExercisesProvider>
     </ThemeProvider>
   );
 }
@@ -18,6 +21,10 @@ function RootLayout() {
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="index" />
       <Stack.Screen name="intro" />
+      <Stack.Screen
+        name="exercise/[id]"
+        options={{ headerShown: true, headerBackButtonDisplayMode: "minimal" }}
+      />
     </Stack>
   );
 }

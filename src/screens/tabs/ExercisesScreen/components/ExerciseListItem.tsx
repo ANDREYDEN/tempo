@@ -4,7 +4,8 @@ import { Spacing } from "@/src/styling/spacing";
 import { Exercise } from "@/src/types/exercise";
 import { getExerciseDurationMinutes } from "@/src/utils/exerciseUtils";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { StyleSheet, View } from "react-native";
+import { useRouter } from "expo-router";
+import { Pressable, StyleSheet, View } from "react-native";
 
 interface ExerciseListItemProps {
   exercise: Exercise;
@@ -12,16 +13,22 @@ interface ExerciseListItemProps {
 
 export function ExerciseListItem({ exercise }: ExerciseListItemProps) {
   const styles = useStyles();
+  const router = useRouter();
+
   const exerciseDurationSeconds = getExerciseDurationMinutes(exercise);
 
+  const handlePress = () => {
+    router.push(`/exercise/${exercise.id}`);
+  };
+
   return (
-    <View style={styles.container}>
+    <Pressable style={styles.container} onPress={handlePress}>
       <TText>{exercise.name}</TText>
       <View style={styles.durationContainer}>
         <TText>{exerciseDurationSeconds}m</TText>
         <MaterialIcons name="access-time" size={Spacing.md_16} />
       </View>
-    </View>
+    </Pressable>
   );
 }
 
