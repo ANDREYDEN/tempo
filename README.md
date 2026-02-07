@@ -7,7 +7,7 @@ Tempo is a timer and an exercise tracker taylored toward rock climbing training.
 - [x] Basic Layout
 - [ ] Functionality
   - [ ] Create Exercise
-  - [ ] List Exercises
+  - [x] List Exercises
   - [ ] Delete Exercise
   - [ ] Search Exercises
   - [ ] View Exercise
